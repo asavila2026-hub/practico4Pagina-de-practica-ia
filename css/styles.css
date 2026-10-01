@@ -1,0 +1,296 @@
+:root {
+--dark-purple: red;    /* Color morado oscuro principal */
+    --neon-green: #44FFA1;     /* Color verde neón de botones y acentos */
+    --text-dark: red;      /* Color de texto principal */
+    --text-muted: #584762;     /* Color de texto secundario/gris */
+    --bg-light: #FAFAFA;       /* Fondo de la sección de características */
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fraunces', 'Arial', serif; /* Puedes usar Arial o importar Fraunces de Google Fonts */
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. SECCIÓN HERO (ENCABEZADO Y PARTE SUPERIOR)
+   ========================================================================== */
+.hero-section {
+    background-color: var(--dark-purple);
+    color: var(--white);
+    padding-top: 32px;
+    text-align: center;
+    position: relative;
+    /* Crea la curva sutil en la parte inferior del fondo morado */
+    border-bottom-left-radius: 50% 4vw;
+    border-bottom-right-radius: 50% 4vw;
+    padding-bottom: 150px;
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.main-footer .logo {
+    color: var(--dark-purple);
+}
+
+.nav-link-underline {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 2px solid var(--neon-green);
+    padding-bottom: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link-underline:hover {
+    opacity: 0.8;
+}
+
+/* Contenido Principal del Hero */
+.hero-content h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    font-weight: 600;
+}
+
+/* Botón Verde Neón */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--neon-green);
+    color: var(--dark-purple);
+    text-decoration: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 0px; /* Diseño cuadrado moderno */
+    border: 2px solid var(--neon-green);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--neon-green);
+}
+
+/* Imagen del Teléfono */
+.hero-image-container {
+    margin-top: 64px;
+    margin-bottom: -280px; /* Empuja la imagen hacia afuera del contenedor morado */
+    z-index: 10;
+    position: relative;
+    
+
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    width: 480px;
+}
+
+/* ==========================================================================
+   3. SECCIÓN DE CARACTERÍSTICAS (FEATURES)
+   ========================================================================== */
+.features-section {
+    background-color: var(--bg-light);
+    padding-top: 320px; /* Espacio para no tapar la imagen del teléfono superpuesta */
+    padding-bottom: 100px;
+    /* Crea la curva invertida en la parte inferior */
+    border-bottom-left-radius: 50% 4vw;
+    border-bottom-right-radius: 50% 4vw;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 15fr);
+    gap: 32px;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 20px;
+}
+
+.feature-number {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--text-muted);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.feature-item h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   4. SECCIÓN DEL FUNDADOR / LLAMADO A LA ACCIÓN (CTA)
+   ========================================================================== */
+.cta-section {
+    padding: 120px 0;
+    background-color: var(--white);
+}
+
+.cta-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 40px;
+}
+
+.founder-image-container {
+    flex: 1;
+    position: relative;
+    z-index: 50px;
+}
+
+/* Círculo verde brillante detrás del fundador */
+.founder-image-container::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    top: -20px;
+    left: -20px;
+
+}
+
+.founder-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+/* Caja de texto morada flotante */
+.cta-box {
+    flex: 1.3;
+    background-color: var(--dark-purple);
+    color: var(--white);
+    padding: 64px;
+    margin-left: -100px; /* Superpone la caja sobre la foto del fundador */
+    position: relative;
+    z-index: 3;
+}
+
+.cta-box h2 {
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.cta-box p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    color: #FCF8FF; /* Blanco suave para lectura */
+}
+
+/* ==========================================================================
+   5. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.main-footer {
+    padding: 64px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 24px;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--dark-purple);
+}
+
+/* ==========================================================================
+   6. DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .hero-image-container {
+        margin-bottom: -200px;
+    }
+
+    .features-section {
+        padding-top: 24px;
+    }
+
+    .cta-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-box {
+        margin-left: 0;
+        padding: 32px;
+        margin-top: -40px;
+    }
+    
+    .founder-image-container::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
